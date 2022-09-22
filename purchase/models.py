@@ -13,3 +13,15 @@ class Product(models.Model):
         return str(self.name)
 
 
+class Order(models.Model):
+    # I was thinking about the user's id
+    userid = models.IntegerField(null=False, blank=False)
+    orderid = models.IntegerField(null=False, blank=False)
+    price = models.IntegerField(default=0)
+    items = models.ManyToManyField(
+        'Product',
+        related_name='order'
+    )
+
+    def __str__(self):
+        return str(self.userid) + "," + str(self.orderid)
