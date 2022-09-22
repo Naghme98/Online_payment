@@ -7,7 +7,7 @@ ENV StripeHOME=/home/app/webapp
 RUN mkdir -p $StripeHOME
 
 # where your code lives
-WORKDIR $StripHOME
+WORKDIR $StripeHOME
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
